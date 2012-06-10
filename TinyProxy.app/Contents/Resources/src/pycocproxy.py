@@ -73,7 +73,7 @@ class ProxyHandler (BaseHTTPServer.BaseHTTPRequestHandler):
 
             for fpath in files:
                 if ospath.exists(fpath):
-                    mime = mimetypes.guess_type("aaa.html")
+                    mime = mimetypes.guess_type(fpath)
                     response_file = fpath
                     fp = open(fpath, "r")
                     data = fp.read()
