@@ -75,7 +75,7 @@ class ProxyHandler (BaseHTTPServer.BaseHTTPRequestHandler):
                 if ospath.exists(fpath):
                     mime = mimetypes.guess_type(fpath)
                     response_file = fpath
-                    fp = open(fpath, "r")
+                    fp = open(fpath, "rb")
                     data = fp.read()
                     fp.close()
                     break
