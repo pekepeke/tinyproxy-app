@@ -83,7 +83,8 @@ class ProxyHandler (BaseHTTPServer.BaseHTTPRequestHandler):
             if mime is not None and data is not None:
                 headers = []
                 headers.append(self.protocol + ' 200 OK')
-                headers.append('Content-Type: ' + mime[0])
+                headers.append('Content-Type: ' +
+                        ('text/plain' if mime[0] is None else mime[0]))
                 headers.append('Content-Length: ' + str(len(data)))
                 headers.append('Cache-Control: no-cache')
                 headers.append('Connection: close')
